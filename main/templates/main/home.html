@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    {% include "main/includes/head.html" %}
+    <!-- for image gallery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/thumbnail-gallery.css' %}">
+    <!-- css for the conversation -->
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/conversation.css' %}"/>
+</head>
+
+<body class="text-center" style="background-color:#ffffff; font-family: 'Roboto', sans-serif;">
+    {% include "main/includes/navbar.html" %}
+
+    <div class="container">
+        <!-- dialog box -->
+        <div class="dialog-box text-left" >
+            <div style="display: inline">></div>
+            <div id="typed" class="typed col-md"></div>
+        </div>
+
+        <div class="row">
+            <!-- placeholder for the Phaser3 game canvas -->
+            <div class="col-md">
+                <img class="img-fluid" alt="Responsive image" src="{% static 'main/assets/sitting_transparent.gif' %}"
+                    style="max-height: 400px">
+            </div>
+
+            <!-- react elements are rendered here -->
+            <div id="react-dialog" class="col-sm align-middle">
+                <script> 
+                    conversation = {{conversation | safe}};
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="position-relative overflow-hidden p-2 m-md-2 text-center bg-light">
+            <div class="col-md-8 p-lg-5 mx-auto my-5">
+                <h1 class="display-4 font-weight-normal">Still Working On It...</h1>
+                <p class="lead font-weight-normal">I'm still working on the website. I plan to add a few
+                    pages/sections, one with
+                    my personal (or academic) tech related projects, the second section will contain my Art blogs.</p>
+                <p>This current header portion will contain a simple HTML5 game that I'm designing using Phaser-3
+                    (javaScript) engine.
+                    You can go ahead and check out a few sections on this page if you like. All my projects are on
+                    github
+                    (links in the footer). Feel free to contact me through any media, Email, LinkedIn or Facebook. </p>
+                <p>sudbasnet10@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="font-size: 15px">
+
+        <!-- load contents sent by views.py -->
+        {% block content %}
+
+        <!-- basic Intro -->
+        <section class="col-md-10 offset-md-1">
+            <div style="padding-top: 20px; padding-bottom: 20px; ">
+                <p><img class="img-fluid" alt="Responsive image" src="{% static 'main/img/kullu3.png' %}"
+                        style="max-height: 200px"></p>
+                <p class="text-dark" style="font-family: Poppins;">
+                    <div class="text-muted">My system, in one cheesy line?</div>
+                    <h4>I believe in hard-work and responsibilities.</h4>
+                </p>
+            </div>
+
+            <div class="text-md-left text-muted" style="font-size: 15px; font-family: 'Karla'; padding: 10px">
+                {% for intro in intros %}
+                    <div class="media" style="margin-bottom:40px">
+                    <img class="align-self-center mr-3" style="width: 160px" src="{% static intro.img %}"
+                        alt= {{ intro.topic | safe}}> 
+                    <div class="media-body"> {{ intro.body | safe }} </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <p class="text-muted text-center">
+                For more details, please check out my
+            </p>
+            <a href="/resume/"><button type="button" class="btn btn-outline-dark">RESUME</button></a>
+        </section>
+
+        <hr class="col-lg-10 col-lg-10 mx-auto">
+
+        <section>
+            <p style="font-family: 'Lobster'; font-size: 45px;">I Love Art</p>
+            <div class="text-muted col-md-10 offset-md-1">
+                <p>I have been drawing sketches since I was a kid. Throughout the years, I've experimented
+                    with quite a few art styles. I've come to enjoy loose B&W style of drawings the most. Some of my
+                    favorite artists are
+                    <a class="text-dark" href="https://www.kimjunggius.com/" target="_blank">Kim Gung Gi</a>,
+                    <a class="text-dark" href="https://karlkopinski.com/" target="_blank">Karl Kopinski</a>,
+                    <a class="text-dark" href="https://www.instagram.com/paulheaston/" target="_blank">Paul Heaston</a>,
+                    <a class="text-dark" href="https://www.instagram.com/j._.n/" target="_blank">Caroline Choi</a>
+                    and
+                    <a class="text-dark" href="https://andybrase.bigcartel.com/">Andy Brase</a>. These artists have very
+                    unique and super cool art styles, I often look to them for inspiration.
+                </p>
+            </div>
+            <div class="tz-gallery">
+                <div class="row">
+                    {% for art in artwork %}
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="{% static art.static_img_path %}">
+                                <img class="img-fluid" src="{% static art.static_img_path %}" alt="Park">
+                            </a>
+                            <div class="caption">
+                                <h3>{{ art.thumbnail_label }}</h3>
+                                <p>{{ art.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {#        <a href="/blog/"><button type="button" class="btn btn-outline-dark" >Check Out my complete Gallery</button></a>#}
+            </div>
+        </section>
+    </div>
+    </div>
+    {% endblock %}
+
+    {% comment %} js for the image gallery on homepage {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
+
+    {% comment %} Load React and standalone babel {% endcomment %}
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    {% comment %} typing animation {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+    {% comment %} React component. {% endcomment %}
+    <script src="{% static 'main/js/dialog.jsx' %}" type="text/babel"></script>
+    
+    {% include "main/includes/footer.html"%}
+
+</body>
+
+</html>

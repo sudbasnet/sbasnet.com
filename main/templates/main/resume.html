@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "main/includes/head.html" %}
+</head>
+
+<body class="text-center" style="background-color:#ffffff; font-family: 'Roboto', sans-serif;">
+    {% include "main/includes/navbar.html" %}
+
+    {% load staticfiles %}
+
+    {% block content %}
+
+    <div class="container text-dark text-left" style="font-family: 'Open Sans';font-size: 15px;">
+
+        <div class="col-md-10 offset-md-1">
+            <h1 class="my-6  " style=" margin-bottom: 20px; margin-top: 20px;">Career Summary</h1>
+            <p class="text-justify" style="font-family: Karla">{{ summary | safe }}</p>
+            <hr class=" mx-auto">
+
+            <!-- Work Experience -->
+            <h1 class="my-6  " style=" margin-bottom: 20px; margin-top: 20px;">Experience</h1>
+            {% for w in work %}
+            <div>
+                <div style="padding-top: 10px; padding-bottom: 10px; margin-top:30px; margin-bottom:10px">
+                    <h4>{{ w.title }}</h4>
+                    <div>{{ w.where }}</div>
+                    {% if w.additional_info != null %}
+                    <div class="text-muted">{{ w.additional_info}}</div>
+                    {% endif %}
+                    <div class="text-muted">{{ w.start|date:"M Y"}} -
+                        {% if w.end == null %}
+                        Current
+                        {% else %}
+                        {{ w.end|date:"M Y" }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="" style="font-family: Karla">
+                    {{ w.responsibilities|safe }}
+                    {% if w.button_text == null %}
+                    {% else %}
+                    <div class=" offset-1">
+                        <button type="button" style="margin-bottom: 20px" class="btn btn-outline-dark"
+                            data-toggle="collapse" data-target="#detail{{ w.id }}">{{ w.button_text }}</button>
+
+                    </div>
+                    <div id="detail{{ w.id }}" class="collapse">
+                        <ul class="">
+                            {{ w.collapsable|safe }}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+
+            <hr class=" mx-auto">
+
+            <!-- Education -->
+            <h1 class="my-6 " style=" margin-bottom: 20px; margin-top: 20px;">Education</h1>
+            <div>
+                {% for e in edu %}
+                <div>
+                    <div class=" " style="padding-top: 10px; padding-bottom: 10px; margin-top:30px; margin-bottom:10px">
+                        <h4>{{ e.degree}}</h4>
+                        <div>{{ e.where }}</div>
+                        <div class="text-muted">{{ e.start|date:"M Y"}} -
+                            {% if e.end == null %}
+                            Expected (May 2019)
+                            {% else %}
+                            {{ e.end|date:"M Y" }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div id="course{{ e.id }}" class="" style="font-family: Karla;">
+                        {{ e.points|safe }}
+                    </div>
+                </div>
+                {% endfor %}
+                <div class=" ">
+                    <button type="button" class="btn btn-outline-dark" data-toggle="collapse"
+                        data-target="#older">Older</button>
+                    <div id="older" class="collapse"
+                        style="padding-top: 10px; padding-bottom: 10px; margin-top:30px; margin-bottom:10px">
+                        <h4>Bachelors in Electronics and Communication Engineering</h4>
+                        <div>Tribhuwan University, Nepal</div>
+                        <div class="text-muted">Dec 2007 - Dec 2011</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mx-auto">
+
+            <h1 class="my-6 " style=" margin-bottom: 20px; margin-top: 20px;">Skills</h1>
+
+            <div class="row" style="padding-top: 10px; padding-bottom: 50px; margin-top:30px; margin-bottom:10px">
+                <div class="col">
+                    <h4 class="">Programming Languages</h4>
+                    Significant Experience with:
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>PL/SQL</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-outline-dark" data-toggle="collapse"
+                            data-target="#minor">Other Programming Languages</button>
+                    </div>
+                    <div id="minor" class="collapse">
+                        <p style="margin-top: 10px">Have done some minor projects using:</p>
+                        <ul>
+                            <li>PHP</li>
+                            <li>C++</li>
+                            <li>C#</li>
+                            <li>Shell Script</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <h4 class="">Technical Skills</h4>
+                    <ul>
+                        <li>Data Analysis</li>
+                        <li>HTML/CSS</li>
+                        <li>Experimentation, Technical Writing and Reporting</li>
+                        <li>Systems Administration (UNIX)</li>
+                        <li>Sound understanding of and experience with Windows, macOS and various Linux distros
+                            (including CentOS/RHEL)</li>
+                        <li>PC building, PCs diagnostics and repair (desktop & laptop).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center" style="margin-bottom: 20px">
+                <a href="{% static 'main/pdf/resume_SudeepBasnet.pdf' %}" download class="btn btn-dark"><span
+                        class="glyphicon glyphicon-download"></span>Download PDF</a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    </div>
+    </div>
+    {% include "main/includes/footer.html"%}
+
+</body>
+
+</html>

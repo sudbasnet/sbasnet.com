@@ -1,0 +1,121 @@
+@font-face {
+    font-family: B04_03;
+    src: url(../fonts/04B_03.ttf);
+}
+
+@font-face {
+    font-family: munro;
+    src: url(../fonts/munro.ttf);
+}
+
+.btn-link:hover {
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.dialog-box {
+    min-height: 200px;
+    font-family: 'Munro';
+    font-size: 35px;
+    padding: 5%;
+    padding-bottom: 0;
+}
+
+.question-box {
+    min-width: 200px;
+    max-width: 700px;
+    height: 80%;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    font-family: Inconsolata;
+}
+
+.question,
+.question:hover {
+    line-height: 100%;
+    padding: 0px;
+    margin: 0px;
+    color: #f7bf33;
+    text-decoration: none;
+
+}
+
+.qactive {
+    color: white;
+    text-decoration: none;
+    background-color: #4a90e2;
+    border-radius: 0%;
+    font-weight: 700;
+}
+
+.qactive>.blinking {
+    font-weight: 700;
+    visibility: visible;
+    animation: blinking-text 1s infinite;
+}
+
+.blinking {
+    visibility: hidden;
+}
+
+.question-ul {
+    list-style-type: "none";
+    margin-left: 0px;
+    padding: 0px;
+}
+
+.console {
+    background-color: #282a2b;
+    border-radius: 10px;
+}
+
+.console-head {
+    text-align: center;
+    font-size: 20px;
+    color: #282a2b;
+    background-color: #96a5bc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+@keyframes blinking-bg {
+    0% {
+        background-color: #4a90e2;
+    }
+
+    40% {
+        background-color: transparent;
+    }
+
+    90% {
+        background-color: #4a90e2;
+    }
+
+    100% {
+        background-color: #4a90e2;
+    }
+}
+
+@keyframes blinking-text {
+    0% {
+        color: white;
+    }
+
+    50% {
+        color: transparent;
+    }
+
+    80% {
+        color: transparent;
+    }
+
+    100% {
+        color: white;
+    }
+}
+
+.typed {
+    word-break: break-word;
+    white-space: p;
+    display: inline;
+}

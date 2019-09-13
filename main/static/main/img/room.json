@@ -1,0 +1,251 @@
+{
+	"textures": [
+		{
+			"image": "room.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1023,
+				"h": 611
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "window.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 386,
+						"h": 427
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 386,
+						"h": 427
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 386,
+						"h": 427
+					}
+				},
+				{
+					"filename": "sofa.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 464,
+						"h": 184
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 464,
+						"h": 184
+					},
+					"frame": {
+						"x": 0,
+						"y": 427,
+						"w": 464,
+						"h": 184
+					}
+				},
+				{
+					"filename": "outside.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 338,
+						"h": 228
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 338,
+						"h": 228
+					},
+					"frame": {
+						"x": 386,
+						"y": 0,
+						"w": 338,
+						"h": 228
+					}
+				},
+				{
+					"filename": "table.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 209,
+						"h": 165
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 209,
+						"h": 165
+					},
+					"frame": {
+						"x": 386,
+						"y": 228,
+						"w": 209,
+						"h": 165
+					}
+				},
+				{
+					"filename": "me.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 214,
+						"h": 257
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 214,
+						"h": 257
+					},
+					"frame": {
+						"x": 724,
+						"y": 0,
+						"w": 214,
+						"h": 257
+					}
+				},
+				{
+					"filename": "pc.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 76,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 76,
+						"h": 105
+					},
+					"frame": {
+						"x": 938,
+						"y": 0,
+						"w": 76,
+						"h": 105
+					}
+				},
+				{
+					"filename": "music.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 128
+					},
+					"frame": {
+						"x": 938,
+						"y": 105,
+						"w": 56,
+						"h": 128
+					}
+				},
+				{
+					"filename": "clock.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 105,
+						"h": 112
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 105,
+						"h": 112
+					},
+					"frame": {
+						"x": 595,
+						"y": 228,
+						"w": 105,
+						"h": 112
+					}
+				},
+				{
+					"filename": "sketches.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 323,
+						"h": 202
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 323,
+						"h": 202
+					},
+					"frame": {
+						"x": 700,
+						"y": 257,
+						"w": 323,
+						"h": 202
+					}
+				},
+				{
+					"filename": "guitar.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 140,
+						"h": 189
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 140,
+						"h": 189
+					},
+					"frame": {
+						"x": 464,
+						"y": 393,
+						"w": 140,
+						"h": 189
+					}
+				},
+				{
+					"filename": "books.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 253,
+						"h": 84
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 253,
+						"h": 84
+					},
+					"frame": {
+						"x": 604,
+						"y": 459,
+						"w": 253,
+						"h": 84
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:799e9289f8528735bb20492d5e70ea59:16f9f728d8b45da39f159ab216d1da87:50e399637f2d06ae12e8da63ce53e9d7$"
+	}
+}

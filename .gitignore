@@ -1,0 +1,8 @@
+pumps/
+__pycache__/
+migrations/
+game.html
+rocket.html
+artblog.html
+rocket.js
+libraries/
