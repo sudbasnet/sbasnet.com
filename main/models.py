@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Intro(models.Model):
+class Introduction(models.Model):
     topic = models.CharField(max_length=200)
     rank = models.IntegerField(blank=True)
     img = models.CharField(max_length=200)
@@ -11,6 +11,11 @@ class Intro(models.Model):
     def __str__(self):
         return self.topic
 
+class Test(models.Model):
+    uniqueid = models.IntegerField(primary_key=True)
+
+    def __str__(self):
+        return self.uniqueid
 
 class CareerSummary(models.Model):
     topic = models.CharField(max_length=10)
