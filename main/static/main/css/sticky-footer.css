@@ -2,8 +2,7 @@
 -------------------------------------------------- */
 html {
   position: relative;
-  min-height: 100%;
-  max-height: 100%;
+  height: 100%;
 }
 
 
@@ -12,6 +11,8 @@ html {
   position: relative;
   bottom: 0;
   width: 100%;
-  height: 100px; /* Set the fixed height of the footer here */
-  line-height: 100px; /* Vertically center the text there */
+  height: 100px;
+  /* Set the fixed height of the footer here */
+  line-height: 100px;
+  /* Vertically center the text there */
 }
