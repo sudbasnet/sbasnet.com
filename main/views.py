@@ -27,5 +27,5 @@ def resume(request):
     return render(request, 'main/resume.html', {'summary': summary, 'work': work_experiences, 'edu': education, 'skill': skills})
 
 
-def artblog(request):
-    return render(request, 'main/artblog.html', {'artwork': artworks})
+def rocket(request):
+    return render(request, 'main/rocket.html', {})
