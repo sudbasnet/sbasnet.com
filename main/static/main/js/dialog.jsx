@@ -132,7 +132,7 @@ class Conversation extends React.Component {
       <React.Fragment>
         {/* the questions are rendered here through the ShowQuestions function */}
         <div className="question-box console text-left">
-          <div className="console-head">Console</div>
+          <div className="console-head">About Me</div>
 
           <div style={{ padding: "10px" }}>
             <span style={{ color: "#eb5d49" }}>

@@ -5,43 +5,39 @@
     {% load staticfiles %}
     {% include "main/includes/head.html" %}
 
-    <!-- for image gallery 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-    <link rel="stylesheet" href="{% static 'main/css/thumbnail-gallery.css' %}">
-    -->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- css for the conversation -->
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/conversation.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}"/>
 </head>
 
-<body class="container text-center" style="background-color:#ffffff; font-family:'Inconsolata', sans-serif; font-size:20px; height:100%;">
-
-    <nav class="navbar navbar-expand-sm navbar-light justify-content-center">
-        <div class="navbar-nav">
-            <a class="nav-link active" href="/">01.Home</a>
-            <a class="nav-link" href="/resume/">02 Resume</a>
-            <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">03 Adventures</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="pumps">03.1 Pumps</a>
-                    <a class="dropdown-item disabled" href="rocket">03.2 Rocket</a>
+<body class="text-center">
+<div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  
+    <header class="masthead mb-auto">
+    <div class="inner">
+        <nav class="navbar navbar-expand-sm navbar-light justify-content-center">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/">01.Home</a>
+                <a class="nav-link" href="/resume/">02 Resume</a>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">03 Adventures</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="pumps">03.1 Pumps</a>
+                        <a class="dropdown-item disabled" href="rocket">03.2 Rocket</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
+    </header>
 
-    <div>
-        <!-- dialog box -->
-        <div class="dialog-box text-left" >
-            <div style="display: inline">></div>
-            <div id="typed" class="typed col-md"></div>
-        </div>
-
+    <main role="main" class="inner cover">
         <div class="row">
             <!-- placeholder for the Phaser3 game canvas -->
             <div class="col-md">
                 <img class="img-fluid" alt="Responsive image" src="{% static 'main/assets/sitting_transparent.gif' %}"
-                    style="max-height: 400px">
+                    style="max-height: 350px">
             </div>
 
             <!-- react elements are rendered here -->
@@ -51,36 +47,34 @@
                 </script>
             </div>           
         </div>
-    </div>
+        
+        <!-- dialog box -->
+        <div class="dialog-box text-left" >
+            <div style="display: inline">></div>
+            <div id="typed" class="typed col-md"></div>
+        </div>
+        
+        {% comment %} Load React and standalone babel {% endcomment %}
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+        {% comment %} typing animation {% endcomment %}
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    
+        {% comment %} React component. {% endcomment %}
+        <script src="{% static 'main/js/dialog.jsx' %}" type="text/babel"></script>  
+    </main>
 
-    {% comment %} Load React and standalone babel {% endcomment %}
-    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-    {% comment %} typing animation {% endcomment %}
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-
-    {% comment %} React component. {% endcomment %}
-    <script src="{% static 'main/js/dialog.jsx' %}" type="text/babel"></script>
-
-    <div class="container align-middle" style="position:fixed; width:100%; bottom:20px;">  
-        <ul style="list-style-type:none;">
-            <li><a target="_blank" class="homefooter" href="https://github.com/sudbasnet">GitHub</a></li>
-            <li><a target="_blank" class="homefooter" href="https://www.linkedin.com/in/sudeepbasnet/">LinkedIn</a></li>
-        </ul>
-    </div>
+    <footer class="mastfoot mt-auto">
+        <div class="inner"> 
+            <ul style="list-style-type:none;">
+                <li><a target="_blank" class="homefooter" href="https://github.com/sudbasnet">GitHub</a></li>
+                <li><a target="_blank" class="homefooter" href="https://www.linkedin.com/in/sudeepbasnet/">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
 </body>
-
-<style>
-    .homefooter:hover{
-        color:#292b2c ;
-        text-decoration: none;
-    }
-    .homefooter{
-        color:#868e96;
-        text-decoration: none;
-    }
-</style>
 
 </html>

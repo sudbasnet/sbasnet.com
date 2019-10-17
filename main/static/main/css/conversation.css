@@ -16,8 +16,9 @@
 .dialog-box {
     min-height: 200px;
     font-family: 'Munro';
-    font-size: 35px;
+    font-size: 25px;
     padding: 5%;
+    color: #709ECC;
     padding-bottom: 0;
 }
 
