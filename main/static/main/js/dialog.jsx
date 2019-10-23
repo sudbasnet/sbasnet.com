@@ -122,7 +122,7 @@ class Conversation extends React.Component {
   };
 
   handleArrowKey = () => {
-    window.addEventListener("keyup", this.keyHandling);
+    window.addEventListener("keydown", this.keyHandling);
   };
 
   render() {

@@ -115,9 +115,7 @@ body {
     text-decoration: none;
     }
 
-.home-nav-link:hover, 
-.home-nav-link-active,
-.home-nav-link-active:hover{
+.home-nav-link:hover{
     color:#292b2c ;
     text-decoration: none;
     }
