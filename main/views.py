@@ -14,7 +14,7 @@ summary = CareerSummary.objects.order_by('date_added')[0].body
 education = Education.objects.order_by('-start')
 skills = Skill.objects.order_by('type_rank')
 
-with open('./main/conversation.json', 'r') as conversation_file:
+with open('main/conversation.json', 'r') as conversation_file:
     data = conversation_file.read()
 conversation = parse_yarn(json.loads(data))
 
